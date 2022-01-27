@@ -12,9 +12,9 @@ Server gui is inside of Djavac-server. When you run it in IDE, server takes loca
 #### Cmd Commands
 
 ```shell
-dfsdf
-sdf
-sdf
+$ cd Directory
+$ javac -Xlint *.java
+$ java ServerGUI_Program.java
 ```
 
 Jetbrains Intelij IDE
