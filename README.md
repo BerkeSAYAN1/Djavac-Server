@@ -20,3 +20,8 @@ sdf
 Jetbrains Intelij IDE
 
 #### Screenshots
+
+![Alt text](screenshots/1.jpg?raw=true "Empty Stage")
+![Alt text](screenshots/2.jpg?raw=true "First Stage")
+![Alt text](screenshots/3.jpg?raw=true "Second Stage")
+![Alt text](screenshots/4.jpg?raw=true "Third Stage")
