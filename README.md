@@ -17,8 +17,6 @@ $ javac -Xlint *.java
 $ java ServerGUI_Program.java
 ```
 
-Jetbrains Intelij IDE
-
 #### Screenshots
 
 ![Alt text](screenshots/1.jpg?raw=true "Empty Stage")
