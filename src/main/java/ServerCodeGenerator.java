@@ -1,25 +1,9 @@
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Reader;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class ServerCodeGenerator {
 
@@ -239,7 +223,7 @@ public class ServerCodeGenerator {
 			throws FileNotFoundException {
 
 		// Setup File and Scanner
-		ArrayList<String> temp = new ArrayList<String>();
+		ArrayList<String> temp = new ArrayList<>();
 		// ArrayList<String> lines = new ArrayList<String>();
 		// String afile="a.java";
 
@@ -249,7 +233,7 @@ public class ServerCodeGenerator {
 
 		// Eðer RMIInterface içi doluysa sil ve diðer interface dosyaya yaz
 
-		ArrayList<String> lines = new ArrayList<String>();
+		ArrayList<String> lines = new ArrayList<>();
 
 		while (myReader.hasNextLine()) {
 			temp.add(myReader.nextLine());
@@ -266,8 +250,8 @@ public class ServerCodeGenerator {
 		}
 		String str1 = "import java.rmi.*;";
 		int kontrol = 0;
-		for (int i = 0; i < lines.size(); i++) {
-			if (lines.get(i).equals(str1)) {
+		for (String line : lines) {
+			if (line.equals(str1)) {
 				kontrol = -1;
 				break;
 			}
@@ -287,8 +271,8 @@ public class ServerCodeGenerator {
 					+ "throws RemoteException;";
 
 			int deneme = 0;
-			for (int i = 0; i < lines.size(); i++) {
-				if (lines.get(i).equals(str2)) {
+			for (String line : lines) {
+				if (line.equals(str2)) {
 					deneme = -1;
 					break;
 				}
@@ -405,8 +389,8 @@ public class ServerCodeGenerator {
 				0x11E };
 		char[] englishChars = new char[] { 'i', 'I', 'u', 'U', 'o', 'O', 's', 'S', 'c', 'C', 'g', 'G' };
 		for (int i = 0; i < turkishChars.length; i++) {
-			ret = ret.replaceAll(new String(new char[] { turkishChars[i] }),
-					new String(new char[] { englishChars[i] }));
+			ret = ret.replaceAll(String.valueOf(turkishChars[i]),
+					String.valueOf(englishChars[i]));
 		}
 		return ret;
 	}
